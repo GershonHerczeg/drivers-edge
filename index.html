@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drivers Edge Driving School - 15 Years Experience</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-yellow: #FFC107;
+            --dark-bg: #1a1a1a;
+            --light-gray: #f8f9fa;
+        }
+
+        * {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-weight: 900;
+            font-size: 1.5rem;
+            color: var(--dark-bg) !important;
+        }
+
+        .navbar-brand span {
+            color: var(--primary-yellow);
+        }
+
+        .nav-link {
+            color: var(--dark-bg) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-yellow) !important;
+        }
+
+        .btn-primary-custom {
+            background-color: var(--primary-yellow);
+            color: var(--dark-bg);
+            border: none;
+            padding: 0.75rem 2rem;
+            font-weight: 600;
+            border-radius: 0;
+            transition: all 0.3s;
+        }
+
+        .btn-primary-custom:hover {
+            background-color: #ffb300;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.4);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?q=80&w=2070');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 150px 0 100px;
+            position: relative;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-section .highlight {
+            color: var(--primary-yellow);
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .experience-badge {
+            background-color: var(--primary-yellow);
+            color: var(--dark-bg);
+            padding: 1rem 1.5rem;
+            display: inline-block;
+            font-weight: 700;
+            margin-top: 2rem;
+            border: 3px solid var(--dark-bg);
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 80px 0;
+            background-color: var(--light-gray);
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        .section-subtitle {
+            color: #666;
+            margin-bottom: 3rem;
+        }
+
+        .course-card {
+            background: white;
+            border: 3px solid var(--dark-bg);
+            padding: 2rem;
+            transition: all 0.3s;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .course-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 5px;
+            background-color: var(--primary-yellow);
+            transition: width 0.3s;
+        }
+
+        .course-card:hover::before {
+            width: 100%;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .course-icon {
+            font-size: 3rem;
+            color: var(--primary-yellow);
+            margin-bottom: 1rem;
+        }
+
+        .course-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--dark-bg);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .stats-box {
+            background-color: var(--primary-yellow);
+            color: var(--dark-bg);
+            padding: 2rem;
+            text-align: center;
+            border: 3px solid var(--dark-bg);
+        }
+
+        .stats-number {
+            font-size: 3rem;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .stats-label {
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background-color: var(--dark-bg);
+            color: white;
+        }
+
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .contact-icon {
+            font-size: 2rem;
+            color: var(--primary-yellow);
+        }
+
+        .contact-text h4 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .contact-text p {
+            margin: 0;
+            color: #ccc;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #000;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-yellow);
+            clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: var(--dark-bg);
+            font-size: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span>DRIVERS EDGE</span> DRIVING SCHOOL
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#courses">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="tel:7184736404" class="btn btn-primary-custom ms-3">Book Today</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1>GET THE<br><span class="highlight">DRIVER'S EDGE</span></h1>
+                    <p>Master the drive, gain confidence, and stay ahead.</p>
+                    <p>From your first time behind the wheel to road-test readiness, we teach you to drive with skill, safety, and confidence. Our certified instructors guide you step by step with clear instruction, real-road practice, and proven techniques that make learning calm, effective, and fast.</p>
+                    <a href="tel:7184736404" class="btn btn-primary-custom btn-lg">Call 718.473.6404</a>
+                    <a href="mailto:driversedgeny@gmail.com" class="btn btn-outline-light btn-lg ms-3">Email Us</a>
+                    <div class="experience-badge">
+                        <div style="font-size: 2rem; line-height: 1;">15</div>
+                        <div style="font-size: 0.9rem;">YEARS<br>EXPERIENCE</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="courses-section">
+        <div class="container">
+            <div class="text-center">
+                <h2 class="section-title">Our Courses</h2>
+                <p class="section-subtitle">Professional driving instruction tailored to your needs</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-car-front"></i>
+                        </div>
+                        <h3 class="course-title">Beginner Driving</h3>
+                        <p>Start your journey behind the wheel with comprehensive beginner lessons. Learn the fundamentals of safe driving from experienced instructors.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-arrow-repeat"></i>
+                        </div>
+                        <h3 class="course-title">Refresher Course</h3>
+                        <p>Getting back on the road? Our refresher courses help you regain confidence and update your driving skills.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-people"></i>
+                        </div>
+                        <h3 class="course-title">Teen Driver</h3>
+                        <p>Specially designed program for teenage drivers to learn safe driving habits and prepare for their driving test.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-clipboard-check"></i>
+                        </div>
+                        <h3 class="course-title">Road Test</h3>
+                        <p>Comprehensive preparation for your road test. Learn the routes, master the maneuvers, and pass with confidence.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h3 class="course-title">Defensive Driving</h3>
+                        <p>Learn advanced techniques to anticipate and avoid hazards. Reduce points and insurance premiums.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="course-card">
+                        <div class="course-icon">
+                            <i class="bi bi-signpost-2"></i>
+                        </div>
+                        <h3 class="course-title">Highway Course</h3>
+                        <p>Master highway driving with confidence. Learn merging, lane changes, and high-speed driving safety.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="stats-box mb-4">
+                        <div class="stats-number">15</div>
+                        <div class="stats-label">YEARS EXPERIENCE</div>
+                    </div>
+                    <h2 class="section-title">About Drivers Edge</h2>
+                    <p class="lead">With 15 years of experience, Drivers Edge Driving School has helped thousands of students become safe, confident drivers.</p>
+                    <p>Led by certified instructor Eli Feltman, we provide personalized, professional driving instruction using proven teaching methods. Our focus is on building real-world driving skills through hands-on practice and expert guidance.</p>
+                    <p>Whether you're a first-time driver, preparing for your road test, or need a refresher course, we'll help you achieve your driving goals safely and efficiently.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="stats-box">
+                                <i class="bi bi-people-fill" style="font-size: 3rem;"></i>
+                                <div class="stats-label mt-2">Certified<br>Instructors</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stats-box">
+                                <i class="bi bi-award-fill" style="font-size: 3rem;"></i>
+                                <div class="stats-label mt-2">Proven<br>Methods</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stats-box">
+                                <i class="bi bi-car-front-fill" style="font-size: 3rem;"></i>
+                                <div class="stats-label mt-2">Real-Road<br>Practice</div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="stats-box">
+                                <i class="bi bi-check-circle-fill" style="font-size: 3rem;"></i>
+                                <div class="stats-label mt-2">High Pass<br>Rate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="section-title text-white">Get Started Today</h2>
+                <p class="text-white-50">Take the first step toward mastering the road. Book Today!</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="bi bi-telephone-fill"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Call Us</h4>
+                                    <p><a href="tel:7184736404" style="color: var(--primary-yellow); text-decoration: none;">718.473.6404</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="contact-info">
+                                <div class="contact-icon">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </div>
+                                <div class="contact-text">
+                                    <h4>Email Us</h4>
+                                    <p><a href="mailto:driversedgeny@gmail.com" style="color: var(--primary-yellow); text-decoration: none;">driversedgeny@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center mt-4">
+                        <h3 class="mb-4">ELI FELTMAN</h3>
+                        <p class="mb-4">Driving Instructor</p>
+                        <a href="tel:7184736404" class="btn btn-primary-custom btn-lg">Book Your Lesson Today</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="mb-3">
+                <div class="logo-icon">A</div>
+            </div>
+            <p class="mb-1"><strong>DRIVERS EDGE DRIVING SCHOOL</strong></p>
+            <p class="text-white-50 mb-0">&copy; 2024 Drivers Edge Driving School. All rights reserved.</p>
+            <p class="text-white-50 mb-0">15 Years Experience | Professional Driving Instruction</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Smooth Scroll -->
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.style.padding = '0.5rem 0';
+            } else {
+                navbar.style.padding = '1rem 0';
+            }
+        });
+    </script>
+</body>
+</html>
